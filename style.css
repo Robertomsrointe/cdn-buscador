@@ -1,0 +1,298 @@
+/* 🔹 Reset Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 🔹 Estilos Generales */
+html, body {
+    font-family: "Montserrat", Sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita scroll horizontal */
+    width: 100%;
+}
+
+/* 🔹 Logo Responsivo */
+.logo {
+    width: 180px;
+    position: absolute;
+    left: 10%;
+    top: 2em;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* 🔹 Banner */
+.banner {
+    position: relative;
+    min-height: 40vh;
+    width: 100%;
+    background-image: url('recursos/banner.jpg'); /* Ruta corregida */
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔹 Contenedor Principal */
+.main {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en pantallas pequeñas */
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 1300px;
+    padding: 2rem;
+}
+
+/* 🔹 Encabezado */
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #000;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 🔹 Responsividad para Encabezado */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        padding: 15px;
+    }
+}
+
+/* 🔹 Contenedor de Galerías e Imágenes */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* 🔹 Ajuste de Galerías e Imágenes en Grid */
+.galerias, .imagenes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas en PC */
+    gap: 20px;
+    max-width: 100%;
+    justify-content: center;
+}
+
+/* 🔹 Estilos Responsivos para Tablets (Máximo 2 columnas) */
+@media (max-width: 1024px) {
+    .galerias, .imagenes {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+    }
+}
+
+/* 🔹 Estilos Responsivos para Móviles (Máximo 1 columna) */
+@media (max-width: 768px) {
+    .galerias, .imagenes {
+        grid-template-columns: repeat(1, 1fr); /* 1 columna en móvil */
+    }
+}
+
+
+/* 🔹 Tarjetas de Galerías e Imágenes */
+.galeria, .imagen {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* 🔹 Efecto Hover */
+.galeria:hover, .imagen:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Títulos de Galerías */
+.galeria h2 {
+    background: #3AAA35;
+    color: white;
+    margin: 0;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.galeria a {
+    text-decoration: none !important;
+}
+
+/* 🔹 Imágenes Responsivas */
+.imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 3px solid #3AAA35;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+/* 🔹 Hover en Imágenes */
+.imagen:hover img {
+    transform: scale(1.05);
+}
+
+.imagen p {
+    padding: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* 🔹 Botón de Volver */
+a {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #3AAA35;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+a:hover {
+    
+    transform: scale(1.05);
+}
+
+/* 🔹 Estilos Responsivos para Galerías e Imágenes */
+@media (max-width: 768px) {
+    .galerias, .imagenes {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .galeria, .imagen {
+        padding: 1rem;
+    }
+
+    a {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* 🔹 Responsividad Adicional para Tablets y Móviles */
+@media (max-width: 1024px) {
+    .main {
+        padding: 2rem;
+    }
+
+    .galerias, .imagenes {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+
+
+
+
+
+
+/* 🔹 Contenedor del título, botón y buscador */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* 🔹 Estilo del botón Volver */
+.volver {
+    background: #3AAA35;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.volver:hover {
+    background: #2c7a26;
+    transform: scale(1.05);
+}
+
+/* 🔹 Espacio vacío para mantener la alineación */
+.espacio-vacio {
+    width: 120px; /* Mismo ancho que el botón "Volver" */
+}
+
+/* 🔹 Estilo del buscador */
+#buscador {
+    padding: 8px 15px;
+    border: 2px solid #3AAA35;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
+}
+
+/* 🔹 Responsividad para móviles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #buscador {
+        width: 100%;
+    }
+
+    .volver, .espacio-vacio {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* 🔹 Contenedor de imágenes del buscador (misma estructura que .imagenes) */
+#resultado-busqueda {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
+    gap: 20px;
+    width: 90%;
+    max-width: 1300px;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+/* 🔹 Ajustes responsivos para tablets */
+@media (max-width: 1024px) {
+    #resultado-busqueda {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+    }
+}
+
+/* 🔹 Ajustes responsivos para móviles */
+@media (max-width: 768px) {
+    #resultado-busqueda {
+        grid-template-columns: repeat(1, 1fr); /* 1 columna en móvil */
+    }
+}
+
